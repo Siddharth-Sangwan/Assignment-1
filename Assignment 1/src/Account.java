@@ -1,17 +1,19 @@
+import java.util.Date;
 
 public class Account {
     private String owner_name;  
     private int acc_type;  
     private float balance;  
     private String acc_status = "Valid";
-    //private Local.date date_created;
     private int pin_code;
     private String city, state; 
-    
+	private Date creationDate;
+	
     public Account(String owner_name, int acc_type)
     {
     	this.owner_name = owner_name;
     	this.acc_type = acc_type;
+    	this.creationDate = new Date();
     }
     
     public void setAddress(String city, String state, int pin_code)
@@ -49,7 +51,7 @@ public class Account {
     public void displayAll()
     {
     	System.out.println("----------------------------------------");
-    	System.out.println(" Owner Name: " + this.owner_name +"\n Balance: " + this.balance + "\n Account Status: " + this.acc_status);
+    	System.out.println(" Owner Name: " + this.owner_name +"\n Creation Date: " + this.creationDate +"\n Balance: " + this.balance + "\n Account Status: " + this.acc_status);
     	if(acc_type == 0)
     		System.out.println(" Account Type: Savings");
     	else
